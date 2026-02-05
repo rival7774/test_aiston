@@ -6,7 +6,6 @@ import {UserMenu} from "./components/UserMenu.tsx";
 
 export const Header = () => {
 
-
     const pages = [
         {path: '/requests', label: 'Заявки'},
         {path: '/reports', label: 'Отчеты'},

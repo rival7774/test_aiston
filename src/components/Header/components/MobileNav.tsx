@@ -19,7 +19,7 @@ export const MobileNav = ({pages, currentPage, setCurrentPage}: MobileNavProps) 
                     as={Button}
                     rightIcon={<ArrowMenu/>}
                     variant="ghost"
-                    color="darkText"
+                    color="text.darkText"
                     p="0"
                     fontSize="20px"
                     lineHeight="24px"
@@ -36,6 +36,7 @@ export const MobileNav = ({pages, currentPage, setCurrentPage}: MobileNavProps) 
                     {pages.map((page) => (
                         <MenuItem
                             key={page.path}
+                            fontWeight="400"
                             opacity={currentPage.path === page.path ? ".5" : "1"}
                             onClick={() => {
                                 setCurrentPage(page);

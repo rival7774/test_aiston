@@ -16,7 +16,7 @@ export const UserMenu = () => {
                 display={{base: showLogout ? "flex" : "none", md: "flex"}}
                 position={{base: "absolute", md: "static"}}
                 border={{base: "1px solid", md: "none"}}
-                borderColor={{base: "borderGrey", md: "transparent"}}
+                borderColor={{base: "border.default", md: "transparent"}}
                 padding={{base: "10px", md: "0"}}
                 borderRadius={{base: '10px', md: '0'}}
                 bg={{base: "white", md: 'transparent'}}
@@ -28,8 +28,9 @@ export const UserMenu = () => {
                     borderRadius="4px"
                     color="darkText"
                     lineHeight="24px"
+                    fontWeight="400"
                     border="solid 1px"
-                    borderColor="borderGrey"
+                    borderColor="border.default"
                     leftIcon={<ExitIcon width={24} height={24}/>}
                 >
                     Выйти
