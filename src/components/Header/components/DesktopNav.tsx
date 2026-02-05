@@ -14,13 +14,17 @@ export const DesktopNav = ({pages, currentSelectNav, selectNav, setCurrentSelect
     return (
         <HStack display={{base: 'none', md: 'flex'}} spacing="14px">
             {pages.map((page) => (
-                <NavButton key={page.path} to={page.path} text={page.label}></NavButton>
+                <NavButton
+                    key={page.path}
+                    to={page.path}
+                    text={page.label}></NavButton>
             ))}
             <Menu>
                 <MenuButton as={Button}
-                            rightIcon={<Box ml="0" color="darkText" opacity=".7"><ArrowReferenceBooks/></Box>}
+                            rightIcon={<Box ml="0" color="text.primary" opacity=".7"><ArrowReferenceBooks/></Box>}
                             variant="ghost"
-                            color="menuText"
+                            color="text.menu"
+                            fontWeight="400"
                             p="0 10px"
                             ml="11px"
                             sx={{
@@ -32,7 +36,12 @@ export const DesktopNav = ({pages, currentSelectNav, selectNav, setCurrentSelect
                 </MenuButton>
                 <MenuList>
                     {selectNav.map((item) => (
-                        <MenuItem key={item} onClick={() => setCurrentSelectNav(item)}>{item}</MenuItem>
+                        <MenuItem fontWeight="400"
+                                  key={item}
+                                  onClick={() => setCurrentSelectNav(item)}
+                        >
+                            {item}
+                        </MenuItem>
                     ))}
                 </MenuList>
             </Menu>

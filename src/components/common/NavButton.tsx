@@ -12,11 +12,12 @@ export const NavButton = ({to, text, children, style}: NavButtonProps) => {
     return (
         <Button as={NavLink}
                 to={to}
-                color="menuText"
+                color="text.menu"
                 variant="ghost"
+                fontWeight="400"
                 sx={{
                     "&.active": {
-                        color: "darkText",
+                        color: "text.primary",
                     },
                 }}
                 p="0"
