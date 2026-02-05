@@ -1,75 +1,35 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite + Chakra UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Макет https://www.figma.com/design/aFJkLdtdqmspfSk7cMkBGx/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?node-id=1-2&t=KGRlAhgOUch7eFzq-0
 
-Currently, two official plugins are available:
+## Структура проекта
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `src/components/` — UI-компоненты, например Header, NotificationBadge, кнопки, иконки
+- `src/layouts/` — Layout-компоненты, например MainLayout с Header и Outlet для страниц
+- `src/pages/` — Страницы приложения (RequestsPage, ReportsPage и т.д.)
+- `src/router/` — Конфигурация роутов через react-router-dom
+- `src/assets/` — Изображения, SVG и другие статические ресурсы
+- `src/App.tsx` — Точка входа в приложение, подключает роутер
+- `src/main.tsx` — Точка монтирования React и глобальных провайдеров (ChakraProvider и т.д.)
 
-## React Compiler
+## Технологии
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- [React 18](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Chakra UI](https://chakra-ui.com/)
+- [React Router v6](https://reactrouter.com/)
+- Поддержка SVG иконок через отдельные компоненты
 
-Note: This will impact Vite dev & build performances.
+## Как запустить проект
 
-## Expanding the ESLint configuration
+```bash
+# Установить зависимости
+npm install
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+# Запустить дев-сервер
+npm dev
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Собрать продакшн
+npm build
 ```
